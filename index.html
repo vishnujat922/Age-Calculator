@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age calculator HTML,Css and Javascript</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        *,*:after*::before{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing:border-box;
+            box-sizing:border-box;
+        }
+        .age{
+            width:600px;
+            height: 400px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            background:linear-gradient(to bottom,#6f9aa7 30%,#a4a362 70%, #a97a69 100%);
+            color:white;
+            margin: 100px auto;
+            text-align: center;
+            padding-top: 20px;
+            border-radius: 20px;
+        }    
+        .age h1{
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        #calculate_btn{
+            width: 70%;
+            height: 45px;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+            padding: 2px;
+            font-size: 24px;
+            text-align: center;
+            background: #00a1ed;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        #birth_date{
+            width: 70%;
+            height: 45px;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+            font-size: 24px;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #calculate_age{
+            font-size: 24px;
+        }
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="cntr">
+        <div class="age">
+            <h1>Age Calculor</h1>
+            <h2>Only Age Calculate for Use me!</h2>
+            <input type="date" name="" id="birth_date">
+            <button id="calculate_btn">Calculate</button>
+            <div id="calculate_age">Your Age</div>
+        </div>
+    </div>
+
+    <script>
+        let calculate_btn = document.getElementById('calculate_btn'),
+            calculate_age = document.getElementById('calculate_age');
+
+        calculate_btn.addEventListener('click',function(){
+            let birth_date = document.getElementById('birth_date').value;
+            birth_date = new Date(birth_date);
+           // alert(birth_date)
+           var todayDate = new Date();
+           //(todayDate)
+           totalAge = Date.now() - birth_date.getTime();
+           ageYear = new Date(totalAge)
+           ageYear = Math.abs(ageYear.getUTCFullYear() - 1970);
+           calculate_age.innerHTML = "Your Age "+ ageYear + " years "
+
+
+        })  
+        
+        calculate_btn
+
+    </script>
+</body>
+</html>
